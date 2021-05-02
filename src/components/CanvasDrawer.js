@@ -10,6 +10,7 @@ const CanvasDrawer = () => {
 
     const draw = (context, bubbles) => {
         let canvas = context.canvas;
+        let width = (window.innerWidth * 0.75) * devicePixelRatio
         let height = (window.innerHeight * 0.3) * devicePixelRatio
         canvas.width = width  ;
         canvas.height = height ;
