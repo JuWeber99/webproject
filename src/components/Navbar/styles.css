@@ -31,6 +31,7 @@
     width: 20rem;
     border-right: #506984 7px solid;
     transition: ease-in-out all 0.2s;
+    box-shadow: 1px 1px 100px 1px black;
 }
 
 .navbar:hover .nav-item {
