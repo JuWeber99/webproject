@@ -43,9 +43,11 @@ const CanvasDrawer = () => {
 
         let i = "Connect the dots for YOUR business".length * ractalFactor * 0.5;
         context.fillStyle = textBg;
-        context.fillRect(canvas.width / 2 - i / 2, canvas.height / 2 - (ractalFactor * 1.5) / 2, i, (ractalFactor * 1.5));
+        context.fillRect(canvas.width / 2 - i  / 2, canvas.height / 2 - (ractalFactor * 1.5) / 2 *devicePixelRatio , i , (ractalFactor * 1.5)*devicePixelRatio);
 
-        context.font = "2rem Sans-Serif";
+        let adjustedFontsize = 25*devicePixelRatio
+        let adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
+        context.font = adjustedFontString;
         context.fillStyle = textColor;
         context.textBaseline = "middle";
         context.textAlign = "center";

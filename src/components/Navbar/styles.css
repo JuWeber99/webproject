@@ -5,15 +5,15 @@
     height: 100vh;
     position: fixed;
     border: 1px solid black;
-    background-color: rgba(37, 37, 65, 0.65);
+    background-color: #506984;
     transition: all ease-in-out 300ms;
 }
 
 .navbar:hover .nav-item svg {
     justify-self: flex-end;
     transition: 500ms ease-in-out;
-    transform: rotate(-180deg);
-    color: rgb(218, 218, 229) !important;
+    transform: rotate(-360deg);
+    color: rgb(255, 255, 255) !important;
 }
 
 .navbar:hover .link-text {
@@ -22,36 +22,32 @@
     align-items: center;
     justify-content: flex-start;
     margin-left: 1rem;
-    color: rgba(238, 238, 241, 0.65) !important;
+    color: rgb(255, 255, 255) !important;
     font-weight: bolder;
 }
 
 .navbar:hover {
-    background: rgba(37,37,65, 0.65);
+    background-color: rgba(248, 243, 243, 0.5); /* #58708f;rgba(200, 79, 221,0.5)*/
     width: 20rem;
-    transition: ease-in-out all var(--transition-speed);
+    border-right: #506984 7px solid;
+    transition: ease-in-out all 0.2s;
 }
 
 .navbar:hover .nav-item {
-    margin-top: 15px;
+    margin-top :1px;
     width: 18rem;
     border-color:  rgba(37,37,65, 0.65);
     border-radius: 10px;
-    transition: all ease 800ms;
+    transition: all ease 400ms;
+    height: 3rem;
     background-color: rgba(37,37,65, 0.65);
 }
 
-
-.navbar:hover .nav-item p {
-    color: black;
-}
-
+/*TBH apply on the active navitem*/
 .navbar:hover .nav-item:first-child {
-    font-size: larger;
-    height: 5rem;
-    width: 18rem;
-    margin-top: 1rem;
+    width: 50%;
     transition: width 800ms;
+    min-width: inherit;
 }
 
 .navbar:hover .nav-link {

@@ -5,6 +5,37 @@ const MyCanvasRenderer = props => {
     const [initial, setInitial] = useState(true);
     const [bubbles, setBubbles] = useState([]);
     const canvasRef = useRef(null)
+    const [dimensions, setDimensions] = React.useState({
+        height: window.innerHeight,
+        width: window.innerWidth
+    });
+
+    useEffect(() => {
+        console.log("render")
+        const debouncedHandleResize = debounce(function handleResize() {
+            setDimensions({
+                height: window.innerHeight,
+                width: window.innerWidth
+            });
+        }, 1000);
+
+        window.addEventListener("resize", debouncedHandleResize);
+
+        return _ => {
+            window.removeEventListener("resize", debouncedHandleResize);
+        };
+    }, [window.innerHeight, window.innerWidth]);
+
+    function debounce(fn, ms) {
+        let timer;
+        return _ => {
+            clearTimeout(timer);
+            timer = setTimeout(_ => {
+                timer = null;
+                fn.apply(this, arguments);
+            }, ms);
+        };
+    }
 
     function updateBubblePositions  (context, bubbles) {
         let bubbleCord = [...bubbles]
@@ -71,8 +102,8 @@ const MyCanvasRenderer = props => {
         animationFrameId = window.requestAnimationFrame(getUpdatedAnimation)
 
         return () => {
-           // window.cancelAnimationFrame(animationFrameId)
-            //context.clearRect(0, 0, canvas.width, canvas.height);
+            window.cancelAnimationFrame(animationFrameId)
+            context.clearRect(0, 0, canvas.width, canvas.height);
         }
 
         setTimeout(function () { //throttle requestAnimationFrame to 20fps

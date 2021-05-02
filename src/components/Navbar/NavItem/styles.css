@@ -6,24 +6,28 @@
   justify-content: center;
   margin-left: auto;
   margin-right: 1rem;
-  margin-top: 10px;
-}
 
+}
 
 .nav-link {
   display: flex;
   align-items: center;
   height: inherit;
-  color: var(--purplepain);
+  color: white;
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
-  transition: var(--transition-speed);
+  transition: 0.2s;
   color: white;
 }
 
 .nav-item:hover {
-  filter: grayscale(0%) opacity(1);
-  background: #bea071  !important;
+  height: 3rem;
+  cursor: pointer;
+  background-color: #506984 !important;
+}
+
+.navbar:hover .nav-item:hover svg {
+  color: rgb(255, 255, 255) !important;
 }
 
 .link-text {
