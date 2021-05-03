@@ -55,7 +55,7 @@ const CanvasDrawer = ({dimensions}) => {
             adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         }
         else  {
-            adjustedFontsize = 50;
+            adjustedFontsize = 60;
         }
         adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         context.font = adjustedFontString;
