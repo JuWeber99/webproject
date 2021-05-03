@@ -1,3 +1,6 @@
+.nav-content {
+    margin-top: 2rem;
+}
 
 .navbar {
     top: 0;
@@ -16,7 +19,6 @@
     justify-self: flex-end;
     transition: 500ms ease-in-out;
     transform: rotate(-360deg);
-    color: rgb(255, 255, 255) !important;
 }
 
 .navbar:hover .link-text {
@@ -53,9 +55,13 @@
     transition: width 800ms;
     min-width: inherit;
     text-decoration: underline;
-    color: #f8f3f3;
+    color: #f7ff01;
     background-color: rgba(37,37,65, 0.65);
 
+}
+/*TBH apply on the active navitem*/
+.navbar:hover .nav-item:first-child svg {
+    color: #f7ff01;
 }
 
 .navbar:hover .nav-link {
@@ -97,8 +103,8 @@
         width: 18rem;
     }
 
-    .active-page{
-
+    .active svg{
+        color: black!important;
     }
 
 }

@@ -19,18 +19,16 @@ function Navbar() {
     }, [active])
 
     const navItems = [
-        {route: "", name: "Home", icon: faAngleDoubleRight},
-        {route: "", name: "Why choose us?", icon: faGreaterThanEqual},
-        {route: "", name: "Contact", icon: faAddressBook},
-        {route: "", name: "Availability", icon: faHelicopter},
-        {route: "", name: "Carreer", icon: faArchway},
-        {route: "", name: "Achievments", icon: faCertificate},
-        {route: "", name: "Under Construction", icon: faWrench},
-
+        {route: "home", name: "Home", icon: faAngleDoubleRight},
+        {route: "sla", name: "Why choose us?", icon: faGreaterThanEqual},
+        {route: "contact", name: "Contact", icon: faAddressBook},
+        {route: "availability", name: "Availability", icon: faHelicopter},
+        {route: "carreer", name: "Carreer", icon: faArchway},
+        {route: "achievements", name: "Achievements", icon: faCertificate},
     ];
 
     return (
-        <nav className={"navbar"}e
+        <nav className={"navbar"}
              onMouseEnter={() => setActive(true)}
              onMouseLeave={() => setActive(false)}
         >
@@ -38,7 +36,7 @@ function Navbar() {
             {navItems.map((item) => {
                 return (
                     <NavItem route={item.route} name={item.name} onClick={(() => setActive(false))}>
-                        <FontAwesomeIcon icon={item.icon} color={"yellow"}/>{" "}
+                        <FontAwesomeIcon icon={item.icon} color={"white"}/>{" "}
                     </NavItem>
                 );
             })}

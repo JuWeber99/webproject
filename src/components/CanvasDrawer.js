@@ -5,7 +5,7 @@ const lineColor = "rgba(37,37,65, 1)"
 const textColor = "#ece6e6"
 const textBg = "rgba(37,37,65, 0.65)";
 
-const mobileMinSize = 400
+const mobileMinSize = 1100
 
 const CanvasDrawer = ({dimensions}) => {
 
@@ -54,7 +54,7 @@ const CanvasDrawer = ({dimensions}) => {
             adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         }
         else  {
-            adjustedFontsize = 50 * devicePixelRatio;
+            adjustedFontsize = 45 * devicePixelRatio;
         }
         adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         context.font = adjustedFontString;
