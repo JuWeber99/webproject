@@ -26,11 +26,18 @@
   background-color: rgba(37,37,65, 1) !important;
 }
 
-.navbar:hover .nav-item:hover svg {
-  color: rgb(255, 255, 255) !important;
-}
 
 .link-text {
   display: none;
   align-items: flex-start;
+}
+
+@media (max-width: 800px) {
+  .link-text {
+    display: none;
+  }
+
+  .nav-item  {
+    flex-direction: row;
+  }
 }
