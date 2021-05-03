@@ -20,10 +20,9 @@ code {
 
 #box canvas{
     position: absolute;
-    top: 5%;
+    top: 0;
     letter-spacing: 5px;
     background: rgba(255, 255, 255, 0.1);
-
 }
 
 

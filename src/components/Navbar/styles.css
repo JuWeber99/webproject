@@ -1,3 +1,7 @@
+.nav-content {
+    margin-top: 2rem;
+}
+
 .navbar {
     top: 0;
     z-index: 1000;
@@ -8,6 +12,7 @@
     background-color: #506984;
     transition: all ease-in-out 300ms;
 }
+
 
 .navbar:hover .nav-item svg {
     justify-self: flex-end;

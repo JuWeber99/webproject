@@ -58,16 +58,16 @@ const MyCanvasRenderer = props => {
         // internally the calculations must be scaled with dpi
         context.scale(devicePixelRatio, devicePixelRatio)
         // but the "real" print should be forced into our wanted size
-        canvas.style.width = (window.innerWidth * 0.75) + "px"
-        canvas.style.height = (window.innerHeight * 0.3) + 'px';
+        canvas.style.width = window.innerWidth+"px"//(window.innerWidth * 0.75) + "px"
+        canvas.style.height = window.innerHeight+"px"//(window.innerHeight * 0.3) + 'px';
     }
 
     function generateBubbles(canvas){
-        let ballCount = canvas.width * 1.3 / 10;
+        let ballCount = canvas.width * 3 / 10;
         // before dom uses effect => generate bubbles
         for (let i = 0; i < ballCount; i++) {
             bubbles.push({
-                x: Math.random() * canvas.width * devicePixelRatio,
+                x: Math.random() * canvas.width  * devicePixelRatio,
                 y: Math.random() * canvas.height * devicePixelRatio,
                 dx: (Math.random() - 0.5) * 2,
                 dy: (Math.random() - 0.5) * 2,
@@ -111,7 +111,7 @@ const MyCanvasRenderer = props => {
         }, 15)
     }, [bubbles])
 
-    return <canvas height={window.innerHeight * 0.3} width={window.innerWidth * 0.75} ref={canvasRef} {...props}/>
+    return <canvas height={window.innerHeight} width={window.innerWidth} ref={canvasRef} {...props}/>
 }
 
 export default MyCanvasRenderer;

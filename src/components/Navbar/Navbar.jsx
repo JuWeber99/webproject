@@ -30,6 +30,7 @@ function Navbar() {
              onMouseEnter={() => setActive(true)}
              onMouseLeave={() => setActive(false)}
         >
+            <div className={"nav-content"}>
             {navItems.map((item) => {
                 return (
                     <NavItem route={item.route} name={item.name} >
@@ -37,6 +38,7 @@ function Navbar() {
                     </NavItem>
                 );
             })}
+            </div>
         </nav>
     );
 }
