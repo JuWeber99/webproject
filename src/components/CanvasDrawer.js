@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import MyCanvasRenderer from "./MyCanvasRenderer";
 
 const bubbleColor = "rgba(56,56,96,0.7)"
-const lineColor = "#506984"
+const lineColor = "rgba(37,37,65, 1)"
 const textColor = "#ece6e6"
 const textBg = "rgba(37,37,65, 0.65)";
 
