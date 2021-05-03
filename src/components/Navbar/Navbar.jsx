@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import NavItem from "./NavItem/NavItem";
 import "./styles.css";
 import {
@@ -14,6 +14,10 @@ import {
 function Navbar() {
     const [active, setActive] = useState(false)
 
+    useEffect(() => {
+        console.log(active)
+    }, [active])
+
     const navItems = [
         {route: "", name: "Home", icon: faAngleDoubleRight},
         {route: "", name: "Why choose us?", icon: faGreaterThanEqual},
@@ -26,14 +30,14 @@ function Navbar() {
     ];
 
     return (
-        <nav className={"navbar"}
+        <nav className={"navbar"}e
              onMouseEnter={() => setActive(true)}
              onMouseLeave={() => setActive(false)}
         >
             <div className={"nav-content"}>
             {navItems.map((item) => {
                 return (
-                    <NavItem route={item.route} name={item.name} >
+                    <NavItem route={item.route} name={item.name} onClick={(() => setActive(false))}>
                         <FontAwesomeIcon icon={item.icon} color={"yellow"}/>{" "}
                     </NavItem>
                 );

@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles.css";
 
-function NavItem({ children, name, route, history }) {
+function NavItem({ children, name, route, history, onClick }) {
   return (
-    <div className={"nav-item"}>
+    <div className={"nav-item"} onClick={onClick}>
         <p className={"link-text"}>{name}</p>
       <li
         className={"nav-link"}

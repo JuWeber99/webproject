@@ -5,12 +5,9 @@ const MyCanvasRenderer = props => {
     const [initial, setInitial] = useState(true);
     const [bubbles, setBubbles] = useState([]);
     const canvasRef = useRef(null)
-    const [dimensions, setDimensions] = React.useState({
-        height: window.innerHeight,
-        width: window.innerWidth
-    });
 
-    useEffect(() => {
+
+   /* useEffect(() => {
         console.log("render")
         const debouncedHandleResize = debounce(function handleResize() {
             setDimensions({
@@ -36,7 +33,7 @@ const MyCanvasRenderer = props => {
             }, ms);
         };
     }
-
+*/
     function updateBubblePositions  (context, bubbles) {
         let bubbleCord = [...bubbles]
         for (let i = 0; i < bubbleCord.length; i++) {

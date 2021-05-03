@@ -7,7 +7,7 @@
     left: 0;
     z-index: 1000;
     width: 5rem;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     border: 1px solid black;
     background-color: #506984;
@@ -71,6 +71,7 @@
         width: 100%;
         height: 3rem;
         position: -ms-device-fixed;
+        margin-left: 0;
     }
     .navbar:hover {
         height: 100%;
@@ -81,6 +82,7 @@
         margin-right: auto;
     }
     .navbar:hover .nav-item:first-child{
+        margin-top: 30%;
         background-color: #506984;
         width: 18rem;
     }

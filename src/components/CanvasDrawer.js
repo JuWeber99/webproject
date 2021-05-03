@@ -6,7 +6,7 @@ const lineColor = "#506984"
 const textColor = "#ece6e6"
 const textBg = "rgba(37,37,65, 0.65)";
 
-const CanvasDrawer = () => {
+const CanvasDrawer = ({dimensions}) => {
 
     const draw = (context, bubbles) => {
         let canvas = context.canvas;
@@ -14,7 +14,6 @@ const CanvasDrawer = () => {
         let height = (window.innerHeight * devicePixelRatio) //(window.innerHeight * 0.3) * devicePixelRatio
         canvas.width = width  ;
         canvas.height = height ;
-
 
         for (let i = 0; i < bubbles.length; i++) {
             let bubble = bubbles[i];
@@ -40,13 +39,18 @@ const CanvasDrawer = () => {
         context.stroke();
 
         let ractalFactor = canvas.height * 0.15;
-
+        let adjustedFontsize=1.3;
         let i = "Connect the dots for YOUR business".length * ractalFactor * 0.5;
         context.fillStyle = textBg;
         context.fillRect(canvas.width / 2 - i  / 2, canvas.height / 2 - (ractalFactor * 1.5) / 2 *devicePixelRatio , i , (ractalFactor * 1.5)*devicePixelRatio);
-
-        let adjustedFontsize = 40*devicePixelRatio
-        let adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
+        console.log(dimensions)
+        if(dimensions.width > 400) {
+            adjustedFontsize = 2 * devicePixelRatio;
+        }
+        else if (dimensions.width > 300) {
+            adjustedFontsize = 0.8*devicePixelRatio;
+        }
+        let adjustedFontString = `${adjustedFontsize}rem Sans-Serif`;
         context.font = adjustedFontString;
         context.fillStyle = textColor;
         context.textBaseline = "middle";
