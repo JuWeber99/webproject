@@ -55,9 +55,9 @@ const CanvasDrawer = ({dimensions}) => {
             adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         }
         else  {
-            adjustedFontsize = 2*devicePixelRatio;
+            adjustedFontsize = 50;
         }
-        adjustedFontString = `${adjustedFontsize}rem Sans-Serif`;
+        adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         context.font = adjustedFontString;
         context.fillStyle = textColor;
         context.textBaseline = "middle";
