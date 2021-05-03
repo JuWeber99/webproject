@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import MyCanvasRenderer from "./MyCanvasRenderer";
 
 const bubbleColor = "rgba(56,56,96,0.7)"
@@ -39,18 +39,19 @@ const CanvasDrawer = ({dimensions}) => {
         context.stroke();
 
         let ractalFactor = canvas.height * 0.15;
-        let adjustedFontsize=1.3;
+        let adjustedFontsize=0;
+        let adjustedFontString = ""
         let i = "Connect the dots for YOUR business".length * ractalFactor * 0.5;
         context.fillStyle = textBg;
         context.fillRect(canvas.width / 2 - i  / 2, canvas.height / 2 - (ractalFactor * 1.5) / 2 *devicePixelRatio , i , (ractalFactor * 1.5)*devicePixelRatio);
-        console.log(dimensions)
-        if(dimensions.width > 600) {
-            adjustedFontsize = 2 * devicePixelRatio;
+        if(dimensions.width < 400) {
+            adjustedFontsize = 35;
+            adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         }
-        else if (dimensions.width > 300) {
-            adjustedFontsize = 0.8*devicePixelRatio;
+        else  {
+            adjustedFontsize = 2*devicePixelRatio;
         }
-        let adjustedFontString = `${adjustedFontsize}rem Sans-Serif`;
+        adjustedFontString = `${adjustedFontsize}rem Sans-Serif`;
         context.font = adjustedFontString;
         context.fillStyle = textColor;
         context.textBaseline = "middle";
