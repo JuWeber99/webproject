@@ -6,8 +6,13 @@ const lineColor = "#506984"
 const textColor = "#ece6e6"
 const textBg = "rgba(37,37,65, 0.65)";
 
+const mobileMinSize = 400
+
 const CanvasDrawer = ({dimensions}) => {
 
+    useEffect(() => {
+        console.log("drawer")
+    })
     const draw = (context, bubbles) => {
         let canvas = context.canvas;
         let width = (window.innerWidth * devicePixelRatio)//(window.innerWidth * 0.75) * devicePixelRatio
@@ -29,7 +34,7 @@ const CanvasDrawer = ({dimensions}) => {
             context.moveTo(l1.x, l1.y)
             for (let j = 0; j < bubbles.length; j++) {
                 let l2 = bubbles[j];
-                if (distance(l1, l2) < ((canvas.width / 90) * 100) * 0.04) {
+                if (distance(l1, l2) < ((canvas.width * devicePixelRatio / 90 ) * 100) * 0.03) {
                     context.lineTo(l2.x, l2.y)
                 }
             }
@@ -44,7 +49,7 @@ const CanvasDrawer = ({dimensions}) => {
         let i = "Connect the dots for YOUR business".length * ractalFactor * 0.5;
         context.fillStyle = textBg;
         context.fillRect(canvas.width / 2 - i  / 2, canvas.height / 2 - (ractalFactor * 1.5) / 2 *devicePixelRatio , i , (ractalFactor * 1.5)*devicePixelRatio);
-        if(dimensions.width < 400) {
+        if(dimensions.width < mobileMinSize) {
             adjustedFontsize = 35;
             adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         }
@@ -60,6 +65,7 @@ const CanvasDrawer = ({dimensions}) => {
     }
 
     function distance(point1, point2) {
+
         let dx = 0;
         let dy = 0;
 

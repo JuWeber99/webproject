@@ -6,34 +6,6 @@ const MyCanvasRenderer = props => {
     const [bubbles, setBubbles] = useState([]);
     const canvasRef = useRef(null)
 
-
-   /* useEffect(() => {
-        console.log("render")
-        const debouncedHandleResize = debounce(function handleResize() {
-            setDimensions({
-                height: window.innerHeight,
-                width: window.innerWidth
-            });
-        }, 1000);
-
-        window.addEventListener("resize", debouncedHandleResize);
-
-        return _ => {
-            window.removeEventListener("resize", debouncedHandleResize);
-        };
-    }, [window.innerHeight, window.innerWidth]);
-
-    function debounce(fn, ms) {
-        let timer;
-        return _ => {
-            clearTimeout(timer);
-            timer = setTimeout(_ => {
-                timer = null;
-                fn.apply(this, arguments);
-            }, ms);
-        };
-    }
-*/
     function updateBubblePositions  (context, bubbles) {
         let bubbleCord = [...bubbles]
         for (let i = 0; i < bubbleCord.length; i++) {
@@ -60,7 +32,8 @@ const MyCanvasRenderer = props => {
     }
 
     function generateBubbles(canvas){
-        let ballCount = canvas.width * 3 / 10;
+        let ballCount = canvas.height * 3 / 10;
+
         // before dom uses effect => generate bubbles
         for (let i = 0; i < ballCount; i++) {
             bubbles.push({
