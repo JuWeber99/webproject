@@ -39,8 +39,8 @@ const MyCanvasRenderer = props => {
             bubbles.push({
                 x: Math.random() * canvas.width  * devicePixelRatio,
                 y: Math.random() * canvas.height * devicePixelRatio,
-                dx: (Math.random() - 0.7) * 2,
-                dy: (Math.random() - 0.7) * 2,
+                dx: (Math.random() - 0.7) * 2 * (window.innerWidth * 0.002 / 2),
+                dy: (Math.random() - 0.7) * 2 * (window.innerHeight * 0.002 / 2),
                 radius: Math.floor(Math.random() * 5)
             });
         }

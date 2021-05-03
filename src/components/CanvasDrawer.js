@@ -10,11 +10,12 @@ const mobileMinSize = 400
 
 const CanvasDrawer = ({dimensions}) => {
 
-    useEffect(() => {
-        console.log("drawer")
-    })
     const draw = (context, bubbles) => {
         let canvas = context.canvas;
+        let factor = canvas.width
+        if(canvas.width < canvas.height) {
+            factor = canvas.height
+        }
         let width = (window.innerWidth * devicePixelRatio)//(window.innerWidth * 0.75) * devicePixelRatio
         let height = (window.innerHeight * devicePixelRatio) //(window.innerHeight * 0.3) * devicePixelRatio
         canvas.width = width  ;
@@ -34,7 +35,7 @@ const CanvasDrawer = ({dimensions}) => {
             context.moveTo(l1.x, l1.y)
             for (let j = 0; j < bubbles.length; j++) {
                 let l2 = bubbles[j];
-                if (distance(l1, l2) < ((canvas.width * devicePixelRatio / 90 ) * 100) * 0.03) {
+                if (distance(l1, l2) < ((factor * devicePixelRatio / 90 ) * 100) * 0.03) {
                     context.lineTo(l2.x, l2.y)
                 }
             }
