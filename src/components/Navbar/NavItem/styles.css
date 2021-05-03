@@ -23,7 +23,7 @@
 .nav-item:hover {
   height: 3rem;
   cursor: pointer;
-  background-color: #506984 !important;
+  background-color: rgba(37,37,65, 1) !important;
 }
 
 .navbar:hover .nav-item:hover svg {
