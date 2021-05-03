@@ -1,10 +1,10 @@
 import React, {useRef, useEffect, useState, useLayoutEffect} from 'react'
-
 const MyCanvasRenderer = props => {
 
     const [initial, setInitial] = useState(true);
     const [bubbles, setBubbles] = useState([]);
     const canvasRef = useRef(null)
+
 
     function updateBubblePositions  (context, bubbles) {
         let bubbleCord = [...bubbles]

@@ -55,6 +55,10 @@
     width: 50%;
     transition: width 800ms;
     min-width: inherit;
+    text-decoration: underline;
+    color: #f8f3f3;
+    background-color: rgba(37,37,65, 0.65);
+
 }
 
 .navbar:hover .nav-link {
@@ -83,7 +87,7 @@
     }
     .navbar:hover .nav-item:first-child{
         margin-top: 30%;
-        background-color: #506984;
+        background-color: rgba(37,37,65, 1);
         width: 18rem;
     }
 

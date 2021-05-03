@@ -1,4 +1,3 @@
-import React, {useEffect} from 'react';
 import MyCanvasRenderer from "./MyCanvasRenderer";
 
 const bubbleColor = "rgba(56,56,96,0.7)"
