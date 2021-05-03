@@ -50,8 +50,8 @@ const CanvasDrawer = () => {
         context.font = adjustedFontString;
         context.fillStyle = textColor;
         context.textBaseline = "middle";
-        context.textAlign = "center";
-        context.fillText("Connect the dots for your business", context.canvas.width / 2, context.canvas.height / 2);
+        context.textAlign = "center"
+        context.fillText("Connect the dots for your business . ", context.canvas.width / 2, context.canvas.height / 2);
     }
 
     function distance(point1, point2) {
