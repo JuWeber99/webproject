@@ -35,7 +35,7 @@ const CanvasDrawer = () => {
                 }
             }
         }
-        context.lineWidth = "0.3";
+        context.lineWidth = "0.4";
         context.strokeStyle = lineColor;
         context.stroke();
 
@@ -45,7 +45,7 @@ const CanvasDrawer = () => {
         context.fillStyle = textBg;
         context.fillRect(canvas.width / 2 - i  / 2, canvas.height / 2 - (ractalFactor * 1.5) / 2 *devicePixelRatio , i , (ractalFactor * 1.5)*devicePixelRatio);
 
-        let adjustedFontsize = 25*devicePixelRatio
+        let adjustedFontsize = 40*devicePixelRatio
         let adjustedFontString = `${adjustedFontsize}px Sans-Serif`;
         context.font = adjustedFontString;
         context.fillStyle = textColor;
