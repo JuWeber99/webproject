@@ -44,7 +44,7 @@ const CanvasDrawer = ({dimensions}) => {
         context.fillStyle = textBg;
         context.fillRect(canvas.width / 2 - i  / 2, canvas.height / 2 - (ractalFactor * 1.5) / 2 *devicePixelRatio , i , (ractalFactor * 1.5)*devicePixelRatio);
         console.log(dimensions)
-        if(dimensions.width > 400) {
+        if(dimensions.width > 600) {
             adjustedFontsize = 2 * devicePixelRatio;
         }
         else if (dimensions.width > 300) {
